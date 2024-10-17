@@ -458,7 +458,7 @@ int main(int argc, char* argv[]) {
      sprintf(text, "\r\n%x\r\n%s\r\n", strlen(request), request);
      send(AcceptSocket, text, strlen(text), 0);
 
-     send(AcceptSocket, "0\r\n\r\n", 9, 0);
+     send(AcceptSocket, "0\r\n\r\n", 5, 0);
 
      fclose(fp);
      closesocket(AcceptSocket);
