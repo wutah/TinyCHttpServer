@@ -24,7 +24,9 @@ Run
 
 
 
-
+----
+----
+----
 This C code implements a very basic HTTP server on Windows using Winsock. While functional for simple file serving, it contains multiple serious security vulnerabilities and reliability issues. Below is a comprehensive list of the most critical problems:1. Directory Traversal / Path Traversal Vulnerability (Critical)Issue: The code constructs the file path by directly concatenating "./serverroot" with user-controlled input from the HTTP request URI, but performs no proper path normalization or restriction.
 Exploitation: An attacker can send requests like GET /../../windows/system32/drivers/etc/hosts HTTP/1.1 to read arbitrary files on the system (limited only by the process's permissions).
 Why it works: The parsing stops at space, ?, *, or :, but allows .. sequences.
